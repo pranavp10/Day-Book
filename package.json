@@ -1,0 +1,42 @@
+{
+  "name": "frontendmasters-gatsby",
+  "private": true,
+  "description": "Bare-bones starter for the Gatsby Frontend Masters workshop.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@mdx-js/mdx": "^1.5.7",
+    "@mdx-js/react": "^1.5.7",
+    "gatsby": "^2.18.6",
+    "gatsby-background-image": "^0.10.2",
+    "gatsby-image": "^2.3.1",
+    "gatsby-plugin-emotion": "^4.2.1",
+    "gatsby-plugin-mdx": "^1.1.2",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-remark-images": "^3.2.1",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-sharp": "^2.4.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "prettier": "^1.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlengstorf/frontendmasters-gatsby"
+  }
+}
