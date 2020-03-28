@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link, graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
-
+import useImage from '../hooks/image';
 const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;
   background-size: cover;
@@ -35,26 +34,16 @@ const TextBox = styled('div')`
   }
 `;
 
-const Hero = () => {
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "index.png" }) {
-        sharp: childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
+const Hero = ({ heading, headingImage }) => {
+  const imageData = useImage(headingImage);
   return (
-    <ImageBackground Tag="section" fluid={image.sharp.fluid} fadeIn="soft">
+    <ImageBackground
+      Tag="section"
+      fluid={imageData.node.childImageSharp.fluid}
+      fadeIn="soft"
+    >
       <TextBox>
-        <h1>What I learnt let the Community learn &hearts;</h1>
-        <p>
-          Hello Community <Link to="/about/">More about me &rarr;</Link>
-        </p>
+        <h1>{heading}</h1>
       </TextBox>
     </ImageBackground>
   );

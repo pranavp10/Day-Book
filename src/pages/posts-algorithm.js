@@ -4,6 +4,7 @@ import usePosts from '../hooks/use-list-post-algorithms';
 import PostPreview from '../components/post-preview-list';
 import ReadLink from '../components/read-link';
 import Hero from '../components/hero-index';
+import Footer from '../components/footer';
 export default () => {
   const posts = usePosts();
   return (
@@ -15,6 +16,7 @@ export default () => {
           <PostPreview key={post.slug} post={post} />
         ))}
         <ReadLink to="/">⇦ back to all posts</ReadLink>
+        <Footer />
       </Layout>
     </>
   );

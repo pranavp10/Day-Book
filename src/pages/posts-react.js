@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import usePosts from '../hooks/use-list-post-react';
 import PostPreview from '../components/post-preview-list';
 import ReadLink from '../components/read-link';
-
+import Footer from '../components/footer';
 export default () => {
   const posts = usePosts();
   return (
@@ -13,6 +13,7 @@ export default () => {
         <PostPreview key={post.slug} post={post} />
       ))}
       <ReadLink to="/">⇦ back to all posts</ReadLink>
+      <Footer />
     </Layout>
   );
 };

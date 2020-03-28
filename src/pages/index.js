@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import Hero from '../components/hero-index';
 import usePosts from '../hooks/use-list-post';
 import PostPreview from '../components/post-preview';
+import Footer from '../components/footer';
 export default () => {
   const posts = usePosts();
   return (
@@ -13,6 +14,7 @@ export default () => {
         {posts.map(post => (
           <PostPreview key={post.slug} post={post} />
         ))}
+        <Footer />
       </Layout>
     </>
   );

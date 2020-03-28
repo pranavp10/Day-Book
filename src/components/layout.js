@@ -50,6 +50,9 @@ const Layout = ({ children }) => {
           li {
             margin-top: 0.25rem;
           }
+          a {
+            color: #444857;
+          }
         `}
       />
       <Helmet>
@@ -62,6 +65,12 @@ const Layout = ({ children }) => {
         css={css`
           margin: 2rem auto;
           max-width: 550px;
+          @media (min-width: 900px) {
+            max-width: 850px;
+          }
+          @media (max-width: 450px) {
+            max-width: 318px;
+          }
         `}
       >
         {children}
