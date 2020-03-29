@@ -27,6 +27,12 @@ const Header = () => (
       display: flex;
       justify-content: space-between;
       padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+      @media (min-width: 900px) {
+        padding: 0.5rem calc((100vw - 850px - 0.5rem) / 2);
+      }
+      @media (max-width: 450px) {
+        padding: 0.5rem calc((100vw - 318px - 0.5rem) / 2);
+      }
     `}
   >
     <NavLink to="/" fontWeight="bold">

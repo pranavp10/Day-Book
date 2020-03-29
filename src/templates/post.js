@@ -11,10 +11,12 @@ export const query = graphql`
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        author
+        date
         section
         postHeading
         headerImage
+        nextPost
+        previousPost
       }
       body
     }
@@ -22,7 +24,6 @@ export const query = graphql`
 `;
 
 const PostTemplate = ({ data: { mdx: post } }) => {
-  const backLink = `posts-${post.frontmatter.section}`;
   return (
     <>
       <HeroPost
@@ -36,10 +37,18 @@ const PostTemplate = ({ data: { mdx: post } }) => {
             font-size: 0.75rem;
           `}
         >
-          Posted on {post.frontmatter.author}
+          Posted on {post.frontmatter.date}
         </p>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <ReadLink to={backLink}>⇦ back to all posts</ReadLink>
+        <div
+          css={css`
+            display: flex;
+            justify-content: space-between;
+          `}
+        >
+          <ReadLink to={post.frontmatter.previousPost}>⇦ Previous</ReadLink>
+          <ReadLink to={post.frontmatter.nextPost}>Next ➩</ReadLink>
+        </div>
         <Footer />
       </Layout>
     </>

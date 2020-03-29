@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Play With Code',
+    title: 'Day Book',
     description:
       'A site where you can learn the core javascript concept and how javascript runs under the hood',
   },
