@@ -4,7 +4,6 @@ import Image from 'gatsby-image';
 import useImage from '../hooks/image';
 const PostPreview = () => {
   const imageData = useImage('me.jpg');
-  console.log(imageData);
   return (
     <article
       css={css`
