@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Helmet from 'react-helmet';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import ReadLink from '../components/read-link';
@@ -26,6 +27,11 @@ export const query = graphql`
 const PostTemplate = ({ data: { mdx: post } }) => {
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>{`Day Book | ${post.frontmatter.title}`}</title>
+        <meta name="description" content={post.frontmatter.postHeading} />
+      </Helmet>
       <HeroPost
         heading={post.frontmatter.title}
         headingImage={post.frontmatter.headerImage}
@@ -46,8 +52,22 @@ const PostTemplate = ({ data: { mdx: post } }) => {
             justify-content: space-between;
           `}
         >
-          <ReadLink to={post.frontmatter.previousPost}>⇦ Previous</ReadLink>
-          <ReadLink to={post.frontmatter.nextPost}>Next ➩</ReadLink>
+          {post.frontmatter.previousPost ? (
+            <ReadLink
+              to={`/${post.frontmatter.section}/${post.frontmatter.previousPost}`}
+            >
+              ⇦ Previous
+            </ReadLink>
+          ) : (
+            <ReadLink to={post.frontmatter.section}>⇦ Previous</ReadLink>
+          )}
+          {post.frontmatter.nextPost ? (
+            <ReadLink
+              to={`/${post.frontmatter.section}/${post.frontmatter.nextPost}`}
+            >
+              Next ➩
+            </ReadLink>
+          ) : null}
         </div>
         <Footer />
       </Layout>

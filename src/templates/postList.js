@@ -4,11 +4,12 @@ import PostPreview from '../components/post-preview-list';
 import ReadLink from '../components/read-link';
 import Footer from '../components/footer';
 import HeroPost from '../components/hero-post';
+import Helmet from 'react-helmet';
 
 import { graphql } from 'gatsby';
 export const query = graphql`
   query($tag: String!) {
-    allMdx(filter: { frontmatter: { section: { eq: $tag } } }) {
+    listData: allMdx(filter: { frontmatter: { section: { eq: $tag } } }) {
       nodes {
         frontmatter {
           title
@@ -27,14 +28,29 @@ export const query = graphql`
         excerpt
       }
     }
+    displayData: allMdx(filter: { frontmatter: { tag: { eq: $tag } } }) {
+      nodes {
+        frontmatter {
+          description
+          tag
+        }
+      }
+    }
   }
 `;
-const postList = ({ data: { allMdx: postList } }) => {
+const postList = ({ data }) => {
+  const postList = data.listData;
+  const headingData = data.displayData.nodes[0].frontmatter;
   return (
     <>
+      <Helmet>
+        <html lang="en" />
+        <title>{`Day Book | ${headingData.tag}`}</title>
+        <meta name="description" content={headingData.description} />
+      </Helmet>
       <HeroPost
-        heading="The Browser Language"
-        headingImage={`${postList.nodes[0].frontmatter.section}.png`}
+        heading={headingData.description}
+        headingImage={`${headingData.tag}.png`}
       />
       <Layout>
         <h1>javascript</h1>
