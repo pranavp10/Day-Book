@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import BackgroundImage from 'gatsby-background-image';
-import useImage from '../hooks/image';
+import { useStaticQuery, graphql } from 'gatsby';
 const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;
   background-size: cover;
@@ -35,17 +35,46 @@ const TextBox = styled('div')`
 `;
 
 const Hero = ({ heading, headingImage }) => {
-  const imageData = useImage(headingImage);
+  const data = useStaticQuery(graphql`
+    query {
+      images: allFile {
+        edges {
+          node {
+            relativePath
+            name
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const imageData = data.images.edges.find(dataList => {
+    return dataList.node.relativePath.includes(headingImage);
+  });
+
   return (
-    <ImageBackground
-      Tag="section"
-      fluid={imageData.node.childImageSharp.fluid}
-      fadeIn="soft"
-    >
-      <TextBox>
-        <h1>{heading}</h1>
-      </TextBox>
-    </ImageBackground>
+    <>
+      {imageData != null ? (
+        <ImageBackground
+          Tag="section"
+          fluid={imageData.node.childImageSharp.fluid}
+          fadeIn="soft"
+        >
+          <TextBox>
+            <h1>{heading}</h1>
+          </TextBox>
+        </ImageBackground>
+      ) : (
+        <TextBox>
+          <h1>{heading}</h1>
+        </TextBox>
+      )}
+    </>
   );
 };
 
