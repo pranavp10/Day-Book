@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Day Book',
     description:
-      'A site where you can learn the core javascript concept and how javascript runs under the hood',
+      'A site where you can learn the core javascript and may more concept and how javascript runs under the hood',
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -52,6 +52,15 @@ module.exports = {
       options: {
         name: 'images',
         path: 'images',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        production: true,
+        disable: !process.env.ANALYZE_BUNDLE_SIZE,
+        generateStatsFile: true,
+        analyzerMode: 'static',
       },
     },
   ],

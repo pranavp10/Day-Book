@@ -53,7 +53,7 @@ const postList = ({ data }) => {
         headingImage={`${headingData.tag}.png`}
       />
       <Layout>
-        <h1>javascript</h1>
+        <h1>{headingData.tag}</h1>
         {postList.nodes.map(post => (
           <PostPreview key={post.frontmatter.slug} post={post.frontmatter} />
         ))}
