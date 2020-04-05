@@ -50,6 +50,11 @@ const Layout = ({ children }) => {
           a {
             color: #444857;
           }
+          pre {
+            background-color: #f6f6f6;
+            border-radius: 10px;
+            padding: 30px;
+          }
         `}
       />
       <Header />

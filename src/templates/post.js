@@ -37,15 +37,17 @@ const PostTemplate = ({ data: { mdx: post } }) => {
         headingImage={post.frontmatter.headerImage}
       />
       <Layout>
-        <h1>{post.frontmatter.postHeading}</h1>
-        <p
-          css={css`
-            font-size: 0.75rem;
-          `}
-        >
-          Posted on {post.frontmatter.date}
-        </p>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <div css={css``}>
+          <h1>{post.frontmatter.postHeading}</h1>
+          <p
+            css={css`
+              font-size: 0.75rem;
+            `}
+          >
+            Posted on {post.frontmatter.date}
+          </p>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
         <div
           css={css`
             display: flex;

@@ -36,7 +36,14 @@ const Header = () => (
     `}
   >
     <NavLink to="/" fontWeight="bold">
-      Play With Code
+      <img
+        css={css`
+          margin: 0;
+          width: 25px;
+        `}
+        src="https://img.icons8.com/cute-clipart/1024/000000/book.png"
+        alt="logo.js"
+      />
     </NavLink>
     <nav
       css={css`

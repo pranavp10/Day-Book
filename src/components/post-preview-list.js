@@ -20,6 +20,9 @@ const PostPreview = ({ post }) => {
         :first-of-type {
           margin-top: 1rem;
         }
+        &:hover {
+          box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+        }
       `}
     >
       <Link

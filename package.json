@@ -16,8 +16,8 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@mdx-js/mdx": "^1.5.7",
-    "@mdx-js/react": "^1.5.7",
+    "@mdx-js/mdx": "^1.5.8",
+    "@mdx-js/react": "^1.5.8",
     "gatsby": "^2.18.6",
     "gatsby-background-image": "^0.10.2",
     "gatsby-cli": "^2.11.3",

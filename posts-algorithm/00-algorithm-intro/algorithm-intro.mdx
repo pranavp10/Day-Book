@@ -1,14 +1,86 @@
 ---
 title: Introduction to Algorithm!
 slug: algorithm-intro
-date: 28-02-2020
-description: The effency of the algorithm.
+date: 01-04-2020
+description: The efficiency of the algorithm.
 section: algorithm
 image: ./images/efficiency.png
 headerImage: algorithm-post-header.png
-postHeading: How to write a high order function
+postHeading: The efficiency of the algorithm
 previousPost: 
 nextPost: algorithm-sort
 ---
 
-Introduction to Algorithm! you need to write all the thing hear so that it will display all the thing to the use
+<hr/>
+<h1 style="text-align:center;">Big O</h1>
+
+<br/>
+
+- To measure the efficiency of the program we use Big O.
+- Their are 2 cases 
+    - Best case
+    - Worst case 
+- We always consider the Worst Case.
+- So will lean it with example's.
+
+## Example 1
+
+```js
+function findElement(value, arr) {
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      return 'Present'
+    }
+  }
+  return 'Not Present'
+}
+findElement(1, [1, 2, 3, 4, 5]) //best case
+findElement(6, [1, 2, 3, 4, 5]) //worst case
+```
+<p style="text-align:center;">Efficiency of Example 1 is O(n)</p>
+
+#### Explanation:
+- for loop is based on the size of the array.
+- n is considered as the number of times the for loop will run.
+- If the for loop will be traversed only 1 time then n value will be 1 and so on.
+- we never know the input, the length of the array may be different so the n value will wary.    
+
+#### Best Case:
+- Efficiency O(1).
+- because of the value(1) and the element is present in the first location of the array so it will not traverse the whole array rather it will end up at the first location os the efficiency will be O(1).
+
+#### Worst Case:
+- Efficiency O(n)
+- because of the value(6) is not present in the array so the for loop will traverse the whole array and the efficiency will be O(n) where n defines the how many times the for loop will traverse for the dynamic array.
+
+## Example 2
+
+```js
+function makeTuples(input) {
+  var answer = []
+  for (var i = 0; i < input.length; i++) {
+    for (var j = 0; j < input.length; j++) {
+      answer.push([input[i], input[j]])
+    }
+  }
+  return answer
+}
+```
+
+<p style="text-align:center;">Efficiency of Example 2 is O(n²)</p>
+
+#### Explanation:
+- here we are using 2 for loop so we need to traverse with both the for loops  
+
+#### Best Case:
+- Efficiency O(n²).
+
+#### Worst Case:
+- Efficiency O(n²)
+- because we are making tuples for the give array we are creating and we are appending 
+
+#### Note:
+- here we are having the same efficiency because we are doing making tuples so we have to traverse each loop so the efficiency remains same
+
+
+

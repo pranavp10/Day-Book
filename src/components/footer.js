@@ -19,6 +19,7 @@ const PostPreview = () => {
         <Icon iconName="Instagram" />
         <Icon iconName="Mail" />
       </div>
+      © 2020, Built with Gatsby
     </>
   );
 };
