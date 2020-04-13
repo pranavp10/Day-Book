@@ -49,6 +49,7 @@ const Layout = ({ children }) => {
           a {
             color: #444857;
             margin: 0;
+            text-decoration: none !important;
           }
           pre {
             background-color: #f6f6f6;
