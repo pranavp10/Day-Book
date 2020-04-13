@@ -1,23 +1,15 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
-import ReadLink from '../components/read-link';
 import Image from 'gatsby-image';
 const PostPreview = ({ post }) => (
-  <article
+  <div
     css={css`
-      border-bottom: 1px solid #ddd;
-      background: #eee;
+      background: #ffffff;
       color: #444857;
-      display: flex;
-      margin-top: 0;
-      padding-bottom: 1rem;
       border-radius: 10px;
-      padding: 1.5rem 1.5rem 2rem;
-      margin: 2rem 0;
-      :first-of-type {
-        margin-top: 1rem;
-      }
+      margin: 0.5rem;
+      padding: 1rem;
       &:hover {
         box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       }
@@ -26,36 +18,30 @@ const PostPreview = ({ post }) => (
     <Link
       to={post.slug}
       css={css`
-        margin: 1rem 1rem 0 0;
-        width: 100px;
+        color: #444857;
+        text-decoration: none !important;
       `}
     >
       <Image
         css={css`
           * {
             margin-top: 0;
+            margin-bottom: -18;
+            padding: 0.5rem;
           }
         `}
-        fluid={post.image.sharp.fluid}
+        fixed={post.image.sharp.fixed}
         alt={post.title}
       />
+      <p
+        css={css`
+          margin-top: 0;
+        `}
+      >
+        {post.title}
+      </p>
     </Link>
-    <div>
-      <h3>
-        <Link
-          to={post.slug}
-          css={css`
-            color: #444857;
-            text-decoration: none !important;
-          `}
-        >
-          {post.title}
-        </Link>
-      </h3>
-      <p>{post.description}</p>
-      <ReadLink to={post.slug}>Read More ➩</ReadLink>
-    </div>
-  </article>
+  </div>
 );
 
 export default PostPreview;

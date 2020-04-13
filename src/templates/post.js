@@ -5,7 +5,6 @@ import Helmet from 'react-helmet';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import ReadLink from '../components/read-link';
-import HeroPost from '../components/hero-post';
 import Footer from '../components/footer';
 export const query = graphql`
   query($slug: String!) {
@@ -32,10 +31,6 @@ const PostTemplate = ({ data: { mdx: post } }) => {
         <title>{`Day Book | ${post.frontmatter.title}`}</title>
         <meta name="description" content={post.frontmatter.postHeading} />
       </Helmet>
-      <HeroPost
-        heading={post.frontmatter.title}
-        headingImage={post.frontmatter.headerImage}
-      />
       <Layout>
         <div css={css``}>
           <h1>{post.frontmatter.postHeading}</h1>

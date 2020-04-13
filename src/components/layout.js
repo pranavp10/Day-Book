@@ -10,7 +10,6 @@ const Layout = ({ children }) => {
             box-sizing: border-box;
             margin: 0;
           }
-          /* More info: https://bit.ly/2PsCnzk */
           * + * {
             margin-top: 1rem;
           }
@@ -49,6 +48,7 @@ const Layout = ({ children }) => {
           }
           a {
             color: #444857;
+            margin: 0;
           }
           pre {
             background-color: #f6f6f6;

@@ -12,8 +12,8 @@ const usePosts = () => {
             description
             image {
               sharp: childImageSharp {
-                fluid(maxWidth: 100, maxHeight: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
+                fixed(width: 100, height: 100) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

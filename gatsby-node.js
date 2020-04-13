@@ -15,10 +15,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      postsList: allFile(
-        filter: { sourceInstanceName: { eq: "post-list" } }
-        limit: 3
-      ) {
+      postsList: allFile(filter: { sourceInstanceName: { eq: "post-list" } }) {
         nodes {
           childMdx {
             frontmatter {
@@ -47,12 +44,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const postsList = result.data.postsList.nodes;
 
   postsList.forEach(post => {
-    createPage({
-      path: `${post.childMdx.frontmatter.tag}`,
-      component: listPost,
-      context: {
-        tag: post.childMdx.frontmatter.tag,
-      },
-    });
+    if (post.childMdx !== null) {
+      createPage({
+        path: `${post.childMdx.frontmatter.tag}`,
+        component: listPost,
+        context: {
+          tag: post.childMdx.frontmatter.tag,
+        },
+      });
+    }
   });
 };
