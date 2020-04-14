@@ -34,7 +34,8 @@ export const query = graphql`
 
 const PostTemplate = ({ data: { mdx: post } }) => {
   const imageData = useImage('me.jpg');
-  var date = post.frontmatter.date;
+  var presentData = new Date();
+  var date = post.frontmatter.date || presentData.getDate();
   date = date
     .split('-')
     .reverse()
