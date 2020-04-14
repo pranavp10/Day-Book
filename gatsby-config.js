@@ -36,13 +36,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts-react',
-        path: 'posts-react',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: 'post-list',
         path: 'post-list',
       },

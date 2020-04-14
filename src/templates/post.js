@@ -108,7 +108,10 @@ const PostTemplate = ({ data: { mdx: post } }) => {
                     rel="noopener noreferrer"
                     href={post.frontmatter.editPage}
                   >
-                    Edit ✏️
+                    Edit{' '}
+                    <span role="img" aria-label="edit">
+                      ✏️
+                    </span>
                   </a>
                 </b>
               </p>
