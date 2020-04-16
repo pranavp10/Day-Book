@@ -9,6 +9,12 @@ const Layout = ({ children }) => {
           * {
             box-sizing: border-box;
             margin: 0;
+            ::-moz-selection {
+              background: #fff2a8;
+            }
+            ::selection {
+              background: #fff2a8;
+            }
           }
           * + * {
             margin-top: 1rem;
