@@ -1,12 +1,10 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import Icon from './icon';
-import AboutMeFooter from './aboutMeFooter';
+
 const PostPreview = () => {
   return (
     <>
-      <hr />
-      <AboutMeFooter />
       <hr />
       <div
         css={css`

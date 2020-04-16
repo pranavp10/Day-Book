@@ -1,64 +1,90 @@
 import React from 'react';
+import { TiFlash } from 'react-icons/ti';
 import { css } from '@emotion/core';
+import fetchImage from '../hooks/image';
 import Image from 'gatsby-image';
-import useImage from '../hooks/image';
-const PostPreview = () => {
-  const imageData = useImage('me.jpg');
+const AboutMe = () => {
+  const image = fetchImage('me.jpg');
   return (
-    <article
-      css={css`
-        color: #444857;
-        display: flex;
-        @media (max-width: 450px) {
-          display: block;
-        }
-        padding: 1.5rem 1.5rem 2rem;
-        margin: 2rem 0;
-      `}
-    >
-      <div
-        css={css`
-          width: 450px;
-          @media (min-width: 900px) {
-            width: 250px;
-          }
-          @media (max-width: 450px) {
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-          }
-        `}
-      >
-        <Image
-          css={css`
-            * {
-              margin-top: 0;
-              border-radius: 50%;
-            }
-          `}
-          fluid={imageData.node.childImageSharp.fluid}
-          alt="Pranav"
-        />
+    <section className="site-about">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6 col-md-12">
+            <h3>About Me .</h3>
+            <p>
+              Hello! I'm Pranav, a software engineer by passion, love solving
+              problem which requires thinking in terms of dynamic programing and
+              <a
+                target="_blank"
+                style={{ margin: '10px', color: '#1ba94c ' }}
+                rel="noopener noreferrer"
+                href="https://www.hackerrank.com/pranavp_"
+              >
+                hakerRank
+              </a>
+              problems and many more
+            </p>
+            <p>
+              Most loved thing in js is the closer property, figuring out life
+              purpose
+            </p>
+            <p>Here are a few technologies I've been working with recently</p>
+            <div className="row">
+              <div className="col-lg-6 col-md-12">
+                <ul className="list-unstyled">
+                  <li>
+                    <TiFlash style={{ color: '#444857' }} />
+                    java Script (ES6+)
+                  </li>
+                  <li>
+                    <TiFlash style={{ color: '#444857' }} />
+                    Php
+                  </li>
+                  <li>
+                    <TiFlash style={{ color: '#444857' }} />
+                    React (Native)
+                  </li>
+                  <li>
+                    <TiFlash style={{ color: '#444857' }} />
+                    Gatsby
+                  </li>
+                </ul>
+              </div>
+              <div className="col-lg-6 col-md-12">
+                <ul className="list-unstyled">
+                  <li>
+                    <TiFlash style={{ color: '#444857' }} />
+                    My Sql (DataBase)
+                  </li>
+
+                  <li>
+                    <TiFlash style={{ color: '#444857' }} />
+                    Node js
+                  </li>
+                  <li>
+                    <TiFlash style={{ color: '#444857' }} />
+                    GraphQl (learning)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-12 text-center vertical-center">
+            <Image
+              css={css`
+                * {
+                  margin-top: 0;
+                  border-radius: 10%;
+                }
+              `}
+              fluid={image.node.childImageSharp.fluid}
+              alt="Pranav"
+            />
+          </div>
+        </div>
       </div>
-      <div
-        css={css`
-          * {
-            margin-left: 1rem;
-            border-radius: 50%;
-          }
-        `}
-      >
-        <p>
-          Hello! I'm Pranav, a software engineer by passion, love solving
-          problem which requires thinking in terms of dynamic programing and
-          hakerRank pattern problems and many more
-          <br />
-          Most loved thing in js is the closer property and figuring out life
-          purpose
-        </p>
-      </div>
-    </article>
+    </section>
   );
 };
 
-export default PostPreview;
+export default AboutMe;
