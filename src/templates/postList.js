@@ -9,12 +9,14 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 export const query = graphql`
   query($tag: String!) {
-    listData: allMdx(filter: { frontmatter: { section: { eq: $tag } } }) {
+    listData: allMdx(
+      filter: { frontmatter: { section: { eq: $tag } } }
+      sort: { fields: [frontmatter___postNumber], order: ASC }
+    ) {
       nodes {
         frontmatter {
           title
           slug
-          date
           section
           description
           image {
@@ -25,7 +27,6 @@ export const query = graphql`
             }
           }
         }
-        excerpt
       }
     }
     displayData: allMdx(filter: { frontmatter: { tag: { eq: $tag } } }) {

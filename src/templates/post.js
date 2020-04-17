@@ -15,10 +15,8 @@ export const query = graphql`
         date
         section
         postHeading
-        headerImage
         nextPost
         previousPost
-        editPage
         image {
           childImageSharp {
             fixed(width: 100, height: 100) {
@@ -106,7 +104,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
                       }
                     `}
                     rel="noopener noreferrer"
-                    href={post.frontmatter.editPage}
+                    href=""
                   >
                     Edit{' '}
                     <span role="img" aria-label="edit">
