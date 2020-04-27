@@ -29,7 +29,7 @@ export const query = graphql`
         }
       }
     }
-    displayData: allMdx(filter: { frontmatter: { tag: { eq: $tag } } }) {
+    displayHeading: allMdx(filter: { frontmatter: { tag: { eq: $tag } } }) {
       nodes {
         frontmatter {
           description
@@ -41,7 +41,7 @@ export const query = graphql`
 `;
 const postList = ({ data }) => {
   const postList = data.listData;
-  const headingData = data.displayData.nodes[0].frontmatter;
+  const headingData = data.displayHeading.nodes[0].frontmatter;
   return (
     <>
       <Helmet>

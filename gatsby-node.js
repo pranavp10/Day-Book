@@ -7,7 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const listPost = path.resolve('./src/templates/postList.js');
   const result = await graphql(`
     query {
-      post: allMdx {
+      post: allMdx(sort: { fields: [frontmatter___section] }) {
         nodes {
           frontmatter {
             slug
@@ -37,6 +37,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: blogPostTemplate,
       context: {
         slug: post.frontmatter.slug,
+        section: post.frontmatter.section,
       },
     });
   });

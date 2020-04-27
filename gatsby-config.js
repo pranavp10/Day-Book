@@ -22,15 +22,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts-algorithm',
-        path: 'posts-algorithm',
+        name: 'algorithm',
+        path: 'algorithm',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts-javascript',
-        path: 'posts-javascript',
+        name: 'javascript',
+        path: 'javascript',
       },
     },
     {

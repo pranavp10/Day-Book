@@ -35,11 +35,11 @@ const ContactMe = () => {
         {sent ? (
           <b>
             Will be contacting you soon for{' '}
-            <span role="image" aria-label="coffee">
+            <span role="img" aria-label="coffee">
               ☕
             </span>{' '}
             or{' '}
-            <span role="image" aria-label="drink">
+            <span role="img" aria-label="drink">
               🍹
             </span>{' '}
             which you like.

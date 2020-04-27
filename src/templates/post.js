@@ -14,7 +14,6 @@ export const query = graphql`
         title
         date
         section
-        postHeading
         nextPost
         previousPost
         image {
@@ -30,7 +29,7 @@ export const query = graphql`
   }
 `;
 
-const PostTemplate = ({ data: { mdx: post } }) => {
+const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
   const imageData = useImage('me.jpg');
   var date = post.frontmatter.date;
   date = date
@@ -56,7 +55,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
       <Helmet>
         <html lang="en" />
         <title>{`Day Book | ${post.frontmatter.title}`}</title>
-        <meta name="description" content={post.frontmatter.postHeading} />
+        <meta name="description" content={post.frontmatter.title} />
       </Helmet>
       <Layout>
         <div
@@ -69,7 +68,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
           `}
         >
           <h1>
-            {post.frontmatter.postHeading}
+            {post.frontmatter.title}
             <br />
             <div
               css={css`
@@ -104,7 +103,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
                       }
                     `}
                     rel="noopener noreferrer"
-                    href=""
+                    href={`https://github.com/pranavp10/Day-Book/blob/master/${pageContext.slug}/${pageContext.section}`}
                   >
                     Edit{' '}
                     <span role="img" aria-label="edit">
