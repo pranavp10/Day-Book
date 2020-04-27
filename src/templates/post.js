@@ -30,6 +30,7 @@ export const query = graphql`
 `;
 
 const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
+  console.log(pageContext);
   const imageData = useImage('me.jpg');
   var date = post.frontmatter.date;
   date = date
@@ -103,7 +104,7 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
                       }
                     `}
                     rel="noopener noreferrer"
-                    href={`https://github.com/pranavp10/Day-Book/blob/master/${pageContext.slug}/${pageContext.section}`}
+                    href={`https://github.com/pranavp10/Day-Book/blob/master/${pageContext.section}/${pageContext.slug}.mdx`}
                   >
                     Edit{' '}
                     <span role="img" aria-label="edit">
