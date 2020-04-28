@@ -49,7 +49,13 @@ export default () => {
           <h3>
             What you are looking for may have been misplaced in Long Term Memory
           </h3>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+            }}
+          >
             <DisplayNextPrev to="/">
               <p style={{ color: '#BDBDBD', textAlign: 'left' }}>HOME</p>
               Explore & Learn

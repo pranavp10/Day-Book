@@ -129,6 +129,7 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
           css={css`
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
           `}
         >
           {pageContext.prev === null ? (

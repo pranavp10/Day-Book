@@ -1,0 +1,39 @@
+blockquote {
+  font-size: 1.25em;
+  width: 80%;
+  margin: 64px auto;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #555555;
+  padding: 10px;
+  border-left: 6px solid lightgray;
+}
+
+.quote-badge {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quote-box {
+  overflow: hidden;
+  margin-top: -50px;
+  padding-top: -100px;
+  border-radius: 17px;
+  background-color: #eee;
+  margin-top: 25px;
+  color: #444857;
+  width: auto;
+  box-shadow: 2px 2px 2px 2px #e0e0e0;
+}
+
+.quotation-mark {
+  margin-top: -10px;
+  font-weight: bold;
+  font-size: 100px;
+  color: #444857;
+  font-family: 'Times New Roman', Georgia, Serif;
+}
+
+.quote-text {
+  font-size: 30px;
+  margin-top: -65px;
+}
