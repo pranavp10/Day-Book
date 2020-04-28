@@ -28,7 +28,6 @@ export const query = graphql`
 `;
 
 const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
-  console.log(pageContext);
   const imageData = useImage('me.jpg');
   var date = post.frontmatter.date;
   date = date
