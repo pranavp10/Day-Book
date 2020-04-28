@@ -7,11 +7,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const listPost = path.resolve('./src/templates/postList.js');
   const result = await graphql(`
     query {
-      post: allMdx(sort: { fields: [frontmatter___section] }) {
+      post: allMdx(
+        skip: 2
+        sort: {
+          order: ASC
+          fields: [frontmatter___section, frontmatter___postNumber]
+        }
+      ) {
         nodes {
           frontmatter {
             slug
             section
+            title
           }
         }
       }
@@ -31,13 +38,39 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
   const posts = result.data.post.nodes;
 
-  posts.forEach(post => {
+  posts.forEach((post, index) => {
+    let presentSection = post.frontmatter.section;
+    let nextPost = index === posts.length - 1 ? null : posts[index + 1];
+    let previousPost = index === 0 ? null : posts[index - 1];
+    let next, prev;
+    if (nextPost != null) {
+      let nextSection = nextPost.frontmatter.section;
+      if (presentSection === nextSection) {
+        next = nextPost.frontmatter;
+      } else {
+        next = null;
+      }
+    } else {
+      next = null;
+    }
+    if (previousPost != null) {
+      let previousSection = previousPost.frontmatter.section;
+      if (presentSection === previousSection) {
+        prev = previousPost.frontmatter;
+      } else {
+        prev = null;
+      }
+    } else {
+      prev = null;
+    }
     createPage({
       path: `${post.frontmatter.section}/${post.frontmatter.slug}`,
       component: blogPostTemplate,
       context: {
         slug: post.frontmatter.slug,
         section: post.frontmatter.section,
+        next: next,
+        prev: prev,
       },
     });
   });

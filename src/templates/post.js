@@ -5,7 +5,7 @@ import Image from 'gatsby-image';
 import Helmet from 'react-helmet';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
-import ReadLink from '../components/read-link';
+import DisplayNextPrev from '../components/displayNextPrev';
 import useImage from '../hooks/imageFixed';
 export const query = graphql`
   query($slug: String!) {
@@ -14,8 +14,6 @@ export const query = graphql`
         title
         date
         section
-        nextPost
-        previousPost
         image {
           childImageSharp {
             fixed(width: 100, height: 100) {
@@ -134,22 +132,34 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
             justify-content: space-between;
           `}
         >
-          {post.frontmatter.previousPost ? (
-            <ReadLink
-              to={`/${post.frontmatter.section}/${post.frontmatter.previousPost}`}
-            >
-              ⇦ Previous
-            </ReadLink>
+          {pageContext.prev === null ? (
+            <DisplayNextPrev to={`/${pageContext.section}`}>
+              <p style={{ color: '#BDBDBD' }}>PREVIOUS</p>
+              List Of{' '}
+              {pageContext.section.charAt(0).toUpperCase() +
+                pageContext.section.slice(1)}
+            </DisplayNextPrev>
           ) : (
-            <ReadLink to={post.frontmatter.section}>⇦ Previous</ReadLink>
-          )}
-          {post.frontmatter.nextPost ? (
-            <ReadLink
-              to={`/${post.frontmatter.section}/${post.frontmatter.nextPost}`}
+            <DisplayNextPrev
+              to={`/${pageContext.prev.section}/${pageContext.prev.slug}`}
             >
-              Next ➩
-            </ReadLink>
-          ) : null}
+              <p style={{ color: '#BDBDBD' }}>PREVIOUS</p>
+              {pageContext.prev.title}
+            </DisplayNextPrev>
+          )}
+          {pageContext.next === null ? (
+            <DisplayNextPrev to="/honour">
+              <p style={{ color: '#BDBDBD', textAlign: 'right' }}>NEXT</p>
+              Honour 🏆
+            </DisplayNextPrev>
+          ) : (
+            <DisplayNextPrev
+              to={`/${pageContext.next.section}/${pageContext.next.slug}`}
+            >
+              <p style={{ color: '#BDBDBD', textAlign: 'right' }}>NEXT</p>
+              {pageContext.next.title}
+            </DisplayNextPrev>
+          )}
         </div>
       </Layout>
     </>

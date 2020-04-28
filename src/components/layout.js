@@ -62,6 +62,9 @@ const Layout = ({ children }) => {
             border-radius: 10px;
             padding: 30px;
           }
+          p {
+            margin: 0;
+          }
         `}
       />
       <Header />
