@@ -10,6 +10,20 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              destinationDir: `gif`,
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
