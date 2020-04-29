@@ -1,0 +1,79 @@
+---
+postNumber: 02
+date: 29-04-2020
+title: Recursion!
+description: Calling same function
+section: algorithm
+slug: recursion
+image: ./images/recursion.png
+---
+
+import { Link } from "gatsby"
+
+
+<h1 style="text-align:center;">A function that call's itself</h1>
+
+>  Recursion should have termination statement were it can end, else their will lead to stack of flow
+
+#### Prerequisites:- <Link to="/javascript/function-working">Function Working</Link>
+<br/>
+
+
+#### Finding factorial using recursion
+- The product of an integer and all the integers below it
+- e.g. factorial four ( 4! ) is equal to 24.
+- (4 x 3 x 2 x 1) = 24
+- (n)(n-1)(n-2) till 1
+#### Example Factorial
+```js
+function factorial(n) {
+  if (n <= 1) {
+    return 1;
+  } else {
+    return factorial(n * factorial(n - 1));
+  }
+}
+```
+#### How recursion works in factorial
+- factorial(4) // calling the function
+- factorial(4 * factorial(4-1) // Calling the same function with different input)
+- function will call until the termination statement is called
+- the whole function will multiply it value and will return the value
+```js
+factorial(4) // when you call the function
+
+// execution of the function
+factorial(4 * factorial(3 * factorial(2 * factorial(1))))
+factorial(4 * factorial(3 * factorial(2 * 1)))
+factorial(4 * factorial(3 * 2))
+factorial(4 * 6)
+24
+```
+####  Fibonacci series
+- A series of numbers in which each number ( Fibonacci number ) is the sum of the two preceding numbers.
+
+![fibonacci image](./images/fibonacci.png)
+
+#### Example Fibonacci
+```js
+function fibonacci(n) {
+  if (n <= 2) {
+    return 1;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+}
+```
+
+#### How recursion works in fibonacci
+```js
+fibonacci(5)
+
+return(fibonacci(4) + fibonacci(3))
+return(return(fibonacci(3) + fibonacci(2)) + return(fibonacci(2) + fibonacci(1)))
+return((return(fibonacci(2) + fibonacci(1)) + 1) + return(1 + 1))
+return((return(return(1 + 1) + 1)) + 2)
+return(return(2 + 1) + 2)
+return(3+2)
+5 //output
+```

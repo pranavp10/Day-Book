@@ -70,7 +70,9 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
             <br />
             <div
               css={css`
+                margin: 0;
                 display: flex;
+                align-items: center;
               `}
             >
               <Link to="./about/">
@@ -89,6 +91,7 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
               <p
                 css={css`
                   font-size: 0.75rem;
+                  margin: 0;
                 `}
               >
                 <b>
@@ -123,7 +126,7 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
             alt=""
           />
         </div>
-
+        <hr />
         <MDXRenderer>{post.body}</MDXRenderer>
         <div
           css={css`
