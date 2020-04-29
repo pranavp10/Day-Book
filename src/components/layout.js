@@ -64,6 +64,13 @@ const Layout = ({ children }) => {
             overflow: auto;
             line-height: 1;
           }
+          img.gif {
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+          }
         `}
       />
       <Header />
