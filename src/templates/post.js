@@ -134,7 +134,7 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
         >
           {pageContext.prev === null ? (
             <DisplayNextPrev to={`/${pageContext.section}`}>
-              <p style={{ color: '#BDBDBD' }}>PREVIOUS</p>
+              <p style={{ color: '#BDBDBD', margin: 0 }}>PREVIOUS</p>
               List Of{' '}
               {pageContext.section.charAt(0).toUpperCase() +
                 pageContext.section.slice(1)}
@@ -143,20 +143,24 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
             <DisplayNextPrev
               to={`/${pageContext.prev.section}/${pageContext.prev.slug}`}
             >
-              <p style={{ color: '#BDBDBD' }}>PREVIOUS</p>
+              <p style={{ color: '#BDBDBD', margin: 0 }}>PREVIOUS</p>
               {pageContext.prev.title}
             </DisplayNextPrev>
           )}
           {pageContext.next === null ? (
             <DisplayNextPrev to="/honour">
-              <p style={{ color: '#BDBDBD', textAlign: 'right' }}>NEXT</p>
+              <p style={{ color: '#BDBDBD', textAlign: 'right', margin: 0 }}>
+                NEXT
+              </p>
               Honour 🏆
             </DisplayNextPrev>
           ) : (
             <DisplayNextPrev
               to={`/${pageContext.next.section}/${pageContext.next.slug}`}
             >
-              <p style={{ color: '#BDBDBD', textAlign: 'right' }}>NEXT</p>
+              <p style={{ color: '#BDBDBD', textAlign: 'right', margin: 0 }}>
+                NEXT
+              </p>
               {pageContext.next.title}
             </DisplayNextPrev>
           )}

@@ -60,10 +60,9 @@ const Layout = ({ children }) => {
           pre {
             background-color: #f6f6f6;
             border-radius: 10px;
-            padding: 30px;
-          }
-          p {
-            margin: 0;
+            padding: 20px;
+            overflow: auto;
+            line-height: 1;
           }
         `}
       />
@@ -80,7 +79,13 @@ const Layout = ({ children }) => {
           }
         `}
       >
-        {children}
+        <div
+          css={css`
+            margin: 0 0.5rem 0 0.5rem;
+          `}
+        >
+          {children}
+        </div>
       </main>
     </>
   );
