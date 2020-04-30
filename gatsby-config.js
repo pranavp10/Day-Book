@@ -3,10 +3,12 @@ module.exports = {
     title: 'Day Book',
     description:
       'A site where you can learn the core javascript and may more concept and how javascript runs under the hood',
+    siteUrl: `https://daybook.netlify.app/`,
   },
   plugins: [
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sitemap`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -57,6 +59,15 @@ module.exports = {
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
         generateStatsFile: true,
         analyzerMode: 'static',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `#444857`,
+        // Disable the loading spinner.
+        showSpinner: false,
       },
     },
   ],
