@@ -1,27 +1,39 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import Icon from './icon';
-import AboutMeFooter from './aboutMeFooter';
-const PostPreview = () => {
+const FooterLink = () => {
   return (
     <>
-      <hr />
-      <AboutMeFooter />
-      <hr />
       <div
         css={css`
-          text-align: center;
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row-reverse;
+          @media (max-width: 500px) {
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+          }
         `}
       >
-        <Icon iconName="Linkedin" />
-        <Icon iconName="Github" />
-        <Icon iconName="Twitter" />
-        <Icon iconName="Instagram" />
-        <Icon iconName="Mail" />
+        <div>
+          <Icon iconName="Linkedin" />
+          <Icon iconName="Github" />
+          <Icon iconName="Twitter" />
+          <Icon iconName="Mail" />
+        </div>
+        <p
+          css={css`
+            @media (max-width: 500px) {
+              padding: 10px;
+            }
+          `}
+        >
+          © 2020, Built with Gatsby
+        </p>
       </div>
-      © 2020, Built with Gatsby
     </>
   );
 };
 
-export default PostPreview;
+export default FooterLink;

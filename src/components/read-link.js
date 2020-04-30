@@ -20,6 +20,11 @@ const ReadLink = styled(Link)`
   text-decoration: none !important;
   text-align: center;
   font-weight: normal !important;
+  transition: 0.3s;
+  &:hover {
+    background-color: #bdbdbd;
+    color: black;
+  }
 `;
 
 export default ReadLink;

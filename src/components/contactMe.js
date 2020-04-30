@@ -49,11 +49,11 @@ const ContactMe = () => {
             <div>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 placeholder="Type your email..."
               />
             </div>
-            <button type="submit" class="btn btn-secondary ">
+            <button type="submit" className="btn btn-secondary ">
               Send
             </button>
           </>

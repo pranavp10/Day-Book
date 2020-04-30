@@ -18,6 +18,11 @@ const displayNextPrev = styled(Link)`
   text-overflow: ellipsis;
   text-decoration: none !important;
   font-weight: normal !important;
+  transition: 0.3s;
+  &:hover {
+    background-color: #444857;
+    color: #eee;
+  }
 `;
 
 export default displayNextPrev;

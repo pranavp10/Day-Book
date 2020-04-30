@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Banner from '../components/banner';
 import AboutMe from '../components/aboutMe';
 import Job from '../components/jobs';
-import Media from '../components/mediaLinks';
+import Footer from '../components/footer';
 import ContactMe from '../components/contactMe';
 const About = () => (
   <Layout>
@@ -12,7 +12,8 @@ const About = () => (
     <AboutMe />
     <Job />
     <ContactMe />
-    <Media />
+    <hr />
+    <Footer />
   </Layout>
 );
 

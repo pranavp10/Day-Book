@@ -6,6 +6,7 @@ import usePosts from '../hooks/use-list-post';
 import PostPreview from '../components/post-preview';
 import Helmet from 'react-helmet';
 import useStaticQuery from '../hooks/use-sitemetadata';
+import AboutMeFooter from '../components/aboutMeFooter';
 import Footer from '../components/footer';
 export default () => {
   const posts = usePosts();
@@ -48,6 +49,9 @@ export default () => {
             ))}
           </article>
         </div>
+        <hr />
+        <AboutMeFooter />
+        <hr />
         <Footer />
       </Layout>
     </>
