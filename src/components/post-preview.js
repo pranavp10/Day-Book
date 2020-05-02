@@ -35,7 +35,7 @@ const PostPreview = ({ post }) => (
       />
       <p
         css={css`
-          margin-top: 0;
+          margin: 0;
         `}
       >
         {post.title}
