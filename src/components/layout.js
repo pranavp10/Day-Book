@@ -83,6 +83,28 @@ const Layout = ({ children }) => {
           }
           @media (max-width: 450px) {
             max-width: 318px;
+            h1 {
+              font-size: 1.85rem;
+              letter-spacing: -0.03rem;
+              font-weight: 700;
+            }
+            p {
+              font-size: 1rem;
+            }
+            h3 {
+              font-size: 1.3rem;
+              font-weight: 700;
+              letter-spacing: -0.03rem;
+            }
+            h3 {
+              font-size: 1.1rem;
+              font-weight: 700;
+              letter-spacing: -0.03rem;
+            }
+            strong {
+              font-size: 1.3rem;
+              letter-spacing: -0.03rem;
+            }
           }
         `}
       >

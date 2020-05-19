@@ -30,7 +30,7 @@ const FooterLink = () => {
             }
           `}
         >
-          No © copyright issues. 2020 Built with Gatsby
+          No © copyright issues. 2020
         </p>
       </div>
     </>

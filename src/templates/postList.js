@@ -54,7 +54,6 @@ const postList = ({ data }) => {
   return (
     <>
       <SEO title={headingData.tag} description={`Day Book | ${description}`} />
-
       <HeroPost
         heading={headingData.description}
         headingImage={`${headingData.tag}.png`}
@@ -64,7 +63,7 @@ const postList = ({ data }) => {
         {postList.nodes.map(post => (
           <PostPreview key={post.frontmatter.slug} post={post.frontmatter} />
         ))}
-        <ReadLink to="/">⇦ back to all posts</ReadLink>
+        <ReadLink to="/">⇦ Explore</ReadLink>
         <Footer />
       </Layout>
     </>

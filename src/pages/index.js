@@ -11,7 +11,7 @@ export default () => {
   const posts = usePosts();
   return (
     <>
-      <SEO />
+      <SEO title="Day Book" />
       <Hero />
       <Layout>
         <div

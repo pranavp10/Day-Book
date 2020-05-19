@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve('./src/templates/post.js');
   const listPost = path.resolve('./src/templates/postList.js');
+  const tags = path.resolve('./src/templates/tag.js');
   const result = await graphql(`
     query {
       post: allMdx(
@@ -29,6 +30,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               tag
             }
           }
+        }
+      }
+      tag: allMdx {
+        group(field: frontmatter___tags) {
+          tag: fieldValue
         }
       }
     }
@@ -87,5 +93,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         },
       });
     }
+  });
+
+  const tag = result.data.tag.group;
+
+  tag.forEach(eachTag => {
+    createPage({
+      path: `tags/${eachTag.tag}`,
+      component: tags,
+      context: {
+        tag: eachTag.tag,
+      },
+    });
   });
 };
