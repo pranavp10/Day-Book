@@ -4,7 +4,7 @@ import PostPreview from '../components/post-preview-list';
 import ReadLink from '../components/read-link';
 import Footer from '../components/footer';
 import HeroPost from '../components/hero-post';
-import Helmet from 'react-helmet';
+import SEO from '../components/seo';
 
 import { graphql } from 'gatsby';
 export const query = graphql`
@@ -27,6 +27,7 @@ export const query = graphql`
             }
           }
         }
+        excerpt
       }
     }
     displayHeading: allMdx(filter: { frontmatter: { tag: { eq: $tag } } }) {
@@ -35,6 +36,7 @@ export const query = graphql`
           description
           tag
         }
+        excerpt
       }
     }
   }
@@ -42,13 +44,17 @@ export const query = graphql`
 const postList = ({ data }) => {
   const postList = data.listData;
   const headingData = data.displayHeading.nodes[0].frontmatter;
+  let description = '';
+  postList.nodes.forEach(element => {
+    description += element.excerpt;
+  });
+  data.displayHeading.nodes.forEach(element => {
+    description += element.excerpt;
+  });
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <title>{`Day Book | ${headingData.tag}`}</title>
-        <meta name="description" content={headingData.description} />
-      </Helmet>
+      <SEO title={headingData.tag} description={`Day Book | ${description}`} />
+
       <HeroPost
         heading={headingData.description}
         headingImage={`${headingData.tag}.png`}

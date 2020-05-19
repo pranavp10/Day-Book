@@ -1,16 +1,34 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: 'Day Book',
     description:
       'A site where you can learn the core javascript and may more concept and how javascript runs under the hood',
     siteUrl: `https://daybook.netlify.app/`,
+    author: `Pranav Patel`,
   },
   plugins: [
     'gatsby-plugin-emotion',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-sitemap`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Day Book`,
+        short_name: `Day Book`,
+        start_url: `/`,
+        background_color: `#eee`,
+        theme_color: `#eee`,
+        display: `standalone`,
+        icon: `images/logo.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -68,6 +86,12 @@ module.exports = {
         color: `#444857`,
         // Disable the loading spinner.
         showSpinner: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GATSBY_GOOGLE_ANALYTICS,
       },
     },
   ],

@@ -24,12 +24,13 @@ const FooterLink = () => {
         </div>
         <p
           css={css`
+            margin: 0;
             @media (max-width: 500px) {
               padding: 10px;
             }
           `}
         >
-          © 2020, Built with Gatsby
+          No © copyright issues. 2020 Built with Gatsby
         </p>
       </div>
     </>

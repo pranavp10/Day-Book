@@ -2,19 +2,19 @@ import React from 'react';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import Image from 'gatsby-image';
-import Helmet from 'react-helmet';
 import image from '../hooks/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/quotes.css';
+import SEO from '../components/seo';
 const Honour = () => {
   const imageData = image('winners.png');
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <title>Day Book | Congratulations</title>
-        <meta name="description" content="Day Book | Congratulations" />
-      </Helmet>
+      <SEO
+        title="Congratulations"
+        description="Day Book | Hi their it takes lots of time, motivation, hard work. This is small
+            appreciate from the Day Book Community"
+      />
       <Layout>
         <h1
           css={css`

@@ -4,20 +4,14 @@ import Layout from '../components/layout';
 import Hero from '../components/hero-index';
 import usePosts from '../hooks/use-list-post';
 import PostPreview from '../components/post-preview';
-import Helmet from 'react-helmet';
-import useStaticQuery from '../hooks/use-sitemetadata';
 import AboutMeFooter from '../components/aboutMeFooter';
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 export default () => {
   const posts = usePosts();
-  const { title, description } = useStaticQuery();
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Helmet>
+      <SEO />
       <Hero />
       <Layout>
         <div

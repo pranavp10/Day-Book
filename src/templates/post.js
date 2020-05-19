@@ -7,6 +7,8 @@ import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import DisplayNextPrev from '../components/displayNextPrev';
 import useImage from '../hooks/imageFixed';
+import SEO from '../components/seo';
+
 export const query = graphql`
   query($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
@@ -23,6 +25,7 @@ export const query = graphql`
         }
       }
       body
+      excerpt
     }
   }
 `;
@@ -55,6 +58,10 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
         <title>{`Day Book | ${post.frontmatter.title}`}</title>
         <meta name="description" content={post.frontmatter.title} />
       </Helmet>
+      <SEO
+        title={post.frontmatter.title}
+        description={`Day Book | ${post.excerpt}`}
+      />
       <Layout>
         <div
           css={css`

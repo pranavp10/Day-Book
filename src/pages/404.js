@@ -2,18 +2,17 @@ import React from 'react';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import Image from 'gatsby-image';
-import Helmet from 'react-helmet';
 import image from '../hooks/image';
 import DisplayNextPrev from '../components/displayNextPrev';
+import SEO from '../components/seo';
 export default () => {
   const imageData = image('404.png');
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <title>Day Book |404 Page not found</title>
-        <meta name="description" content="Day Book |404 Page not found" />
-      </Helmet>
+      <SEO
+        title="Day Book |404 Page not found"
+        description="Day Book |404 Page not found"
+      />
       <Layout>
         <h1
           css={css`
