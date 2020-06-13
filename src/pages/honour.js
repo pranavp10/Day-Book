@@ -3,7 +3,6 @@ import { css } from '@emotion/core';
 import Layout from '../components/layout';
 import Image from 'gatsby-image';
 import image from '../hooks/image';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/quotes.css';
 import SEO from '../components/seo';
 const Honour = () => {

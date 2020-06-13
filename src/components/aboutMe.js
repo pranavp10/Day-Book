@@ -30,43 +30,42 @@ const AboutMe = () => {
             </p>
             <p>Here are a few technologies I've been working with recently</p>
             <div className="row">
-              <div className="col-lg-6 col-md-12">
-                <ul className="list-unstyled">
-                  <li>
-                    <TiFlash style={{ color: '#444857' }} />
-                    java Script (ES6+)
-                  </li>
-                  <li>
-                    <TiFlash style={{ color: '#444857' }} />
-                    Php
-                  </li>
-                  <li>
-                    <TiFlash style={{ color: '#444857' }} />
-                    React (Native)
-                  </li>
-                  <li>
-                    <TiFlash style={{ color: '#444857' }} />
-                    Gatsby
-                  </li>
-                </ul>
-              </div>
-              <div className="col-lg-6 col-md-12">
-                <ul className="list-unstyled">
-                  <li>
-                    <TiFlash style={{ color: '#444857' }} />
-                    My Sql (DataBase)
-                  </li>
-
-                  <li>
-                    <TiFlash style={{ color: '#444857' }} />
-                    Node js
-                  </li>
-                  <li>
-                    <TiFlash style={{ color: '#444857' }} />
-                    GraphQl (learning)
-                  </li>
-                </ul>
-              </div>
+              <ul className="list-unstyled">
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  java Script (ES6+)
+                </li>
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  Php
+                </li>
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  React (Native)
+                </li>
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  Gatsby
+                </li>
+              </ul>
+              <ul className="list-unstyled">
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  Next js
+                </li>
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  My Sql (DataBase)
+                </li>
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  Node js
+                </li>
+                <li>
+                  <TiFlash style={{ color: '#444857' }} />
+                  GraphQl (learning)
+                </li>
+              </ul>
             </div>
           </div>
           <div className="col-lg-6 col-md-12 text-center vertical-center">

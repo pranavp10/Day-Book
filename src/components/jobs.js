@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab, Nav } from 'react-bootstrap';
 import { TiFlash } from 'react-icons/ti';
-import { FaGithubSquare, FaAndroid } from 'react-icons/fa';
+import { FaGithubSquare, FaAndroid, FaGitlab } from 'react-icons/fa';
 import {
   DiReact,
   DiPhp,
@@ -22,16 +22,8 @@ const Job = () => (
               <div className="col-lg-2 col-md-12">
                 <Nav variant="pills" className="flex-column">
                   <Nav.Item>
-                    <Nav.Link
-                      eventKey="first"
-                      style={{
-                        color: '#444857',
-                        background: '#eeeeee',
-                        fontWeight: 'bold',
-                      }}
-                    >
-                      Tulassi
-                    </Nav.Link>
+                    <Nav.Link eventKey="first">Tulassi</Nav.Link>
+                    <Nav.Link eventKey="second">Quze</Nav.Link>
                   </Nav.Item>
                 </Nav>
               </div>
@@ -46,7 +38,7 @@ const Job = () => (
                     >
                       @ Tulassi Technology
                     </a>
-                    <p className="fromAndTo">Sep 2019 to till date</p>
+                    <p className="fromAndTo">Sep 2019 to Apr 2020</p>
                     <ul className="list-unstyled">
                       <li>
                         <TiFlash />
@@ -104,7 +96,7 @@ const Job = () => (
                         </a>
                         <ul>
                           <li>Name: Poultry</li>
-                          <li>Duration: (28-Nov-2019 to till today)</li>
+                          <li>Duration: (28-Nov-2019 to 24-Apr-2020)</li>
                           <li>
                             Project Details: Multiple Web module integrated with
                             App
@@ -123,6 +115,52 @@ const Job = () => (
                               <li>
                                 MySQL
                                 <DiMysql />
+                              </li>
+                              <li>
+                                Git
+                                <DiGit />
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    Frontend Developer{' '}
+                    <a
+                      href="https://app.quze.co/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      @ Quze
+                    </a>
+                    <p className="fromAndTo">May 2020 to till date</p>
+                    <ul className="list-unstyled">
+                      <li>
+                        <TiFlash />
+                        Course Catalogue{' '}
+                        <a
+                          href="https://github.com/pranavp10/inventory"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FaGitlab />
+                        </a>
+                        <ul>
+                          <li>Name: app.quze.co</li>
+                          <li>Duration: (5-may-2019 to till date)</li>
+
+                          <li>
+                            Tech Stack:
+                            <ul>
+                              <li>
+                                React
+                                <DiReact />
+                              </li>
+                              <li>
+                                Bootstrap
+                                <DiBootstrap />
                               </li>
                               <li>
                                 Git

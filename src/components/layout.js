@@ -49,6 +49,7 @@ const Layout = ({ children }) => {
           strong {
             color: #444857;
           }
+
           li {
             margin-top: 0.25rem;
           }
