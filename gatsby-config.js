@@ -3,7 +3,7 @@ require('dotenv').config({
 });
 module.exports = {
   siteMetadata: {
-    title: 'Day Book',
+    title: 'Learn',
     description:
       'A site where you can learn the core javascript and may more concept and how javascript runs under the hood',
     siteUrl: `https://daybook.netlify.app/`,
@@ -19,13 +19,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Day Book`,
-        short_name: `Day Book`,
+        name: `Learn`,
+        short_name: `Learn`,
         start_url: `/`,
         background_color: `#eee`,
         theme_color: `#eee`,
         display: `standalone`,
-        icon: `images/logo.png`,
+        icon: `images/websiteLogo.png`,
       },
     },
     `gatsby-plugin-offline`,

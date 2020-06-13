@@ -53,7 +53,7 @@ const postList = ({ data }) => {
   });
   return (
     <>
-      <SEO title={headingData.tag} description={`Day Book | ${description}`} />
+      <SEO title={headingData.tag} description={`Learn | ${description}`} />
       <HeroPost
         heading={headingData.description}
         headingImage={`${headingData.tag}.png`}

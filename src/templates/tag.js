@@ -32,10 +32,7 @@ const tag = ({ pageContext, data }) => {
   const list = data.allMdx.nodes;
   return (
     <>
-      <SEO
-        title={pageContext.tag}
-        description={`Day Book | ${pageContext.tag}`}
-      />
+      <SEO title={pageContext.tag} description={`Learn | ${pageContext.tag}`} />
       <Layout>
         <h1>Tag {pageContext.tag}</h1>
         {list.map(post => (

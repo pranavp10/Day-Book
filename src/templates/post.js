@@ -41,7 +41,7 @@ const PostTemplate = ({ data: { mdx: post }, pageContext }) => {
     <>
       <SEO
         title={post.frontmatter.title}
-        description={`Day Book | ${post.excerpt}`}
+        description={`Learn | ${post.excerpt}`}
       />
       <Layout>
         <div

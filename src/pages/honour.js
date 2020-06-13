@@ -11,8 +11,8 @@ const Honour = () => {
     <>
       <SEO
         title="Congratulations"
-        description="Day Book | Hi their it takes lots of time, motivation, hard work. This is small
-            appreciate from the Day Book Community"
+        description="Learn | Hi their it takes lots of time, motivation, hard work. This is small
+            appreciate from the Learn Community"
       />
       <Layout>
         <h1
@@ -52,7 +52,7 @@ const Honour = () => {
         <div>
           <p>
             Hi their it takes lots of time, motivation, hard work. This is small
-            appreciate from the <b>Day Book Community</b>
+            appreciate from the <b>Learn Community</b>
           </p>
         </div>
         <div className="container text-center">

@@ -10,8 +10,8 @@ export default () => {
   return (
     <>
       <SEO
-        title="Day Book |404 Page not found"
-        description="Day Book |404 Page not found"
+        title="Learn |404 Page not found"
+        description="Learn |404 Page not found"
       />
       <Layout>
         <h1
