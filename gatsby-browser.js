@@ -2,7 +2,6 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
-import 'bootstrap/dist/css/bootstrap.min.css';
 /* eslint-disable */
 const component = {
   pre: props => {
